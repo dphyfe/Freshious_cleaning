@@ -68,6 +68,12 @@ body {
     padding: 6rem 0 5rem;
 }
 
+.hero-section h1 {
+    text-align: center;
+    font-weight: 900 !important;
+    letter-spacing: -.02em;
+}
+
 /* Stats bar inside hero */
 .stat-card {
     background: rgba(255, 255, 255, .12);
