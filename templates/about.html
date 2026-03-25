@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us – Freshious Cleaning{% endblock %}
+
+{% block content %}
+
+<!-- Page Header -->
+<div class="page-header text-white text-center py-5">
+    <div class="container py-3">
+        <h1 class="display-4 fw-bold mb-2">About <span class="text-warning">Us</span></h1>
+        <p class="text-white-50 lead">Meet the team dedicated to keeping your spaces fresh</p>
+        <nav aria-label="breadcrumb" class="d-flex justify-content-center">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'home' %}" class="text-warning text-decoration-none">Home</a></li>
+                <li class="breadcrumb-item active text-white-50" aria-current="page">About</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<!-- ===== OUR STORY ===== -->
+<section class="py-6">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6 order-lg-2">
+                <img src="{% static 'images/about-story.jpg' %}" onerror="this.src='https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=700&q=80'" alt="Our Story" class="img-fluid rounded-4 shadow-lg w-100" style="object-fit:cover;height:420px;" />
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <span class="section-label text-warning fw-semibold">Our Story</span>
+                <h2 class="display-6 fw-bold mt-1 mb-3">From One Bucket to <span class="text-primary">Thousands of Homes</span></h2>
+                <p class="text-muted mb-3">
+                    Founded in 2015 by Maria & James Fresher, Freshious Cleaning started as a small family operation with a big dream — to make professional, affordable cleaning accessible to everyone.
+                </p>
+                <p class="text-muted mb-4">
+                    Over a decade later, we've grown into a trusted team of 50+ cleaners serving thousands of homes and businesses across the region. Our secret? We treat every client's space as if it were our own.
+                </p>
+                <div class="row g-3">
+                    <div class="col-6">
+                        <div class="border rounded-3 p-3 text-center">
+                            <h4 class="fw-bold text-warning mb-0">2015</h4>
+                            <small class="text-muted">Founded</small>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="border rounded-3 p-3 text-center">
+                            <h4 class="fw-bold text-warning mb-0">50+</h4>
+                            <small class="text-muted">Team Members</small>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="border rounded-3 p-3 text-center">
+                            <h4 class="fw-bold text-warning mb-0">5K+</h4>
+                            <small class="text-muted">Happy Clients</small>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="border rounded-3 p-3 text-center">
+                            <h4 class="fw-bold text-warning mb-0">4.9 ★</h4>
+                            <small class="text-muted">Average Rating</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== OUR MISSION ===== -->
+<section class="py-6 bg-light">
+    <div class="container">
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="text-center p-5 rounded-4 shadow-sm bg-white h-100">
+                    <div class="mission-icon mb-3"><i class="bi bi-eye text-warning fs-1"></i></div>
+                    <h4 class="fw-bold mb-2">Our Vision</h4>
+                    <p class="text-muted">To be the most trusted cleaning brand — known for integrity, quality, and care in every corner we touch.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="text-center p-5 rounded-4 shadow-sm bg-primary text-white h-100">
+                    <div class="mission-icon mb-3"><i class="bi bi-rocket-takeoff text-warning fs-1"></i></div>
+                    <h4 class="fw-bold mb-2">Our Mission</h4>
+                    <p class="text-white-50">To deliver consistently excellent cleaning services that improve the quality of everyday life for our clients.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="text-center p-5 rounded-4 shadow-sm bg-white h-100">
+                    <div class="mission-icon mb-3"><i class="bi bi-gem text-warning fs-1"></i></div>
+                    <h4 class="fw-bold mb-2">Our Values</h4>
+                    <p class="text-muted">Trust, transparency, and thoroughness. We stand behind every clean with our 100% satisfaction guarantee.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TEAM ===== -->
+<section class="py-6">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-label text-warning fw-semibold">The Team</span>
+            <h2 class="display-6 fw-bold mt-1">Meet Our <span class="text-primary">Cleaning Experts</span></h2>
+        </div>
+        <div class="row g-4 justify-content-center">
+            {% for member in team %}
+            <div class="col-lg-3 col-md-6">
+                <div class="team-card text-center p-4 rounded-4 shadow-sm border-0 hover-lift bg-white">
+                    <div class="team-avatar mx-auto mb-3 d-flex align-items-center justify-content-center rounded-circle fw-bold text-white fs-4">
+                        {{ member.initials }}
+                    </div>
+                    <h5 class="fw-bold mb-0">{{ member.name }}</h5>
+                    <small class="text-warning fw-semibold">{{ member.role }}</small>
+                    <p class="text-muted small mt-2 mb-0">{{ member.bio }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- ===== CERTIFICATIONS ===== -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h5 class="fw-semibold text-muted mb-4">Certified, Insured & Trusted By</h5>
+        <div class="row justify-content-center align-items-center g-4">
+            <div class="col-auto"><span class="badge bg-white border text-dark px-4 py-3 fs-6 shadow-sm"><i class="bi bi-patch-check-fill text-success me-2"></i>ISO Certified</span></div>
+            <div class="col-auto"><span class="badge bg-white border text-dark px-4 py-3 fs-6 shadow-sm"><i class="bi bi-shield-fill-check text-primary me-2"></i>Fully Insured</span></div>
+            <div class="col-auto"><span class="badge bg-white border text-dark px-4 py-3 fs-6 shadow-sm"><i class="bi bi-leaf-fill text-success me-2"></i>Eco-Certified</span></div>
+            <div class="col-auto"><span class="badge bg-white border text-dark px-4 py-3 fs-6 shadow-sm"><i class="bi bi-star-fill text-warning me-2"></i>5-Star Rated</span></div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

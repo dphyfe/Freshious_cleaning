@@ -1,0 +1,222 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Freshious Cleaning – Spotless Every Time{% endblock %}
+
+{% block content %}
+
+<!-- ===== HERO ===== -->
+<section class="hero-section d-flex align-items-center">
+    <div class="container text-center text-white">
+        <span class="badge bg-warning text-dark fw-semibold px-3 py-2 rounded-pill mb-3 fs-6">
+            #1 Trusted Cleaning Service
+        </span>
+        <h1 class="display-3 fw-bold mb-3">Your Space, <span class="text-warning">Spotless</span> Every Time</h1>
+        <p class="lead mb-4 col-lg-7 mx-auto text-white-50">
+            From cozy homes to busy offices — Freshious Cleaning delivers professional, eco-friendly cleaning services tailored just for you.
+        </p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="{% url 'contact' %}" class="btn btn-warning btn-lg rounded-pill fw-semibold px-5 shadow">
+                <i class="bi bi-calendar-check me-2"></i>Book Now
+            </a>
+            <a href="{% url 'services' %}" class="btn btn-outline-light btn-lg rounded-pill px-5">
+                Our Services <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="row g-3 mt-5 justify-content-center">
+            <div class="col-6 col-md-3">
+                <div class="stat-card p-3 rounded-3">
+                    <h3 class="fw-bold text-warning mb-0">5K+</h3>
+                    <small class="text-white-50">Happy Clients</small>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-card p-3 rounded-3">
+                    <h3 class="fw-bold text-warning mb-0">10+</h3>
+                    <small class="text-white-50">Years Experience</small>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-card p-3 rounded-3">
+                    <h3 class="fw-bold text-warning mb-0">100%</h3>
+                    <small class="text-white-50">Satisfaction Rate</small>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-card p-3 rounded-3">
+                    <h3 class="fw-bold text-warning mb-0">50+</h3>
+                    <small class="text-white-50">Expert Cleaners</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SERVICES OVERVIEW ===== -->
+<section class="py-6 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-label text-warning fw-semibold">What We Do</span>
+            <h2 class="display-6 fw-bold mt-1">Our Cleaning <span class="text-primary">Services</span></h2>
+            <p class="text-muted col-lg-6 mx-auto">Professional cleaning solutions for every need, delivered with care and precision.</p>
+        </div>
+
+        <div class="row g-4">
+            {% for service in services %}
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card card h-100 border-0 shadow-sm rounded-4 p-4 text-center hover-lift">
+                    <div class="service-icon mx-auto mb-3 d-flex align-items-center justify-content-center rounded-circle">
+                        <i class="bi {{ service.icon }} fs-2 text-warning"></i>
+                    </div>
+                    <h5 class="fw-bold mb-2">{{ service.name }}</h5>
+                    <p class="text-muted small mb-3">{{ service.description }}</p>
+                    <a href="{% url 'services' %}" class="btn btn-sm btn-outline-warning rounded-pill px-4">Learn More</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="{% url 'services' %}" class="btn btn-warning btn-lg rounded-pill px-5 fw-semibold">
+                View All Services <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== WHY CHOOSE US ===== -->
+<section class="py-6">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <span class="section-label text-warning fw-semibold">Why Freshious?</span>
+                <h2 class="display-6 fw-bold mt-1 mb-4">We Go Beyond <span class="text-primary">Just Clean</span></h2>
+                <p class="text-muted mb-4">
+                    We combine professional expertise with eco-friendly products and a deep commitment to customer satisfaction. Every clean is thorough, every visit is reliable.
+                </p>
+                <div class="row g-3">
+                    <div class="col-12">
+                        <div class="d-flex gap-3 align-items-start why-item p-3 rounded-3">
+                            <div class="icon-badge bg-warning rounded-circle d-flex align-items-center justify-content-center flex-shrink-0">
+                                <i class="bi bi-shield-check text-dark fs-5"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Vetted & Insured Staff</h6>
+                                <p class="text-muted small mb-0">All cleaners are background-checked, trained, and fully insured for your peace of mind.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="d-flex gap-3 align-items-start why-item p-3 rounded-3">
+                            <div class="icon-badge bg-warning rounded-circle d-flex align-items-center justify-content-center flex-shrink-0">
+                                <i class="bi bi-leaf text-dark fs-5"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Eco-Friendly Products</h6>
+                                <p class="text-muted small mb-0">We use non-toxic, biodegradable cleaning products safe for your family and the planet.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="d-flex gap-3 align-items-start why-item p-3 rounded-3">
+                            <div class="icon-badge bg-warning rounded-circle d-flex align-items-center justify-content-center flex-shrink-0">
+                                <i class="bi bi-clock-history text-dark fs-5"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1">On-Time, Every Time</h6>
+                                <p class="text-muted small mb-0">We respect your schedule. Count on us to show up on time, ready to work.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="{% url 'about' %}" class="btn btn-primary rounded-pill px-5 mt-4 fw-semibold">Learn About Us</a>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="why-image-wrapper rounded-4 overflow-hidden shadow-lg">
+                    <img src="{% static 'images/cleaning-team.jpg' %}" onerror="this.src='https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=700&q=80'" alt="Freshious Cleaning Team" class="img-fluid w-100" style="object-fit:cover;height:480px;" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="py-6 bg-primary text-white">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="badge bg-warning text-dark px-3 py-2 rounded-pill mb-2">Simple Process</span>
+            <h2 class="display-6 fw-bold">How It <span class="text-warning">Works</span></h2>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="step-circle mx-auto mb-3">1</div>
+                <h5 class="fw-bold">Book Online</h5>
+                <p class="text-white-50 small">Fill out our quick booking form with your details and preferred schedule.</p>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="step-circle mx-auto mb-3">2</div>
+                <h5 class="fw-bold">Confirm & Relax</h5>
+                <p class="text-white-50 small">We'll confirm your booking and send reminders so you never miss an appointment.</p>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="step-circle mx-auto mb-3">3</div>
+                <h5 class="fw-bold">We Clean</h5>
+                <p class="text-white-50 small">Our pros arrive on time and get to work with professional-grade equipment.</p>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="step-circle mx-auto mb-3">4</div>
+                <h5 class="fw-bold">Enjoy Freshness</h5>
+                <p class="text-white-50 small">Come home to a spotlessly clean space. Satisfaction guaranteed!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="py-6 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-label text-warning fw-semibold">Testimonials</span>
+            <h2 class="display-6 fw-bold mt-1">What Our <span class="text-primary">Clients Say</span></h2>
+        </div>
+        <div class="row g-4">
+            {% for review in reviews %}
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-0 shadow-sm rounded-4 p-4 h-100 hover-lift">
+                    <div class="mb-3 text-warning">
+                        {% for i in "12345" %}
+                        <i class="bi bi-star-fill"></i>
+                        {% endfor %}
+                    </div>
+                    <p class="text-muted fst-italic mb-4">"{{ review.text }}"</p>
+                    <div class="d-flex align-items-center gap-3 mt-auto">
+                        <div class="avatar-circle fw-bold text-white d-flex align-items-center justify-content-center">
+                            {{ review.initials }}
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-0">{{ review.name }}</h6>
+                            <small class="text-muted">{{ review.role }}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<section class="py-5 cta-section text-white text-center">
+    <div class="container">
+        <h2 class="display-6 fw-bold mb-3">Ready for a <span class="text-warning">Fresher</span> Space?</h2>
+        <p class="text-white-50 mb-4 col-md-6 mx-auto">Book your cleaning today and get 15% off your first service!</p>
+        <a href="{% url 'contact' %}" class="btn btn-warning btn-lg rounded-pill fw-semibold px-5 shadow-lg">
+            <i class="bi bi-calendar-check me-2"></i>Book Now — It's Free
+        </a>
+    </div>
+</section>
+
+{% endblock %}

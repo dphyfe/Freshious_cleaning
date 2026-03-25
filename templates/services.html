@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Our Services – Freshious Cleaning{% endblock %}
+
+{% block content %}
+
+<!-- Page Header -->
+<div class="page-header text-white text-center py-5">
+    <div class="container py-3">
+        <h1 class="display-4 fw-bold mb-2">Our <span class="text-warning">Services</span></h1>
+        <p class="text-white-50 lead">Comprehensive cleaning solutions tailored to your lifestyle</p>
+        <nav aria-label="breadcrumb" class="d-flex justify-content-center">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'home' %}" class="text-warning text-decoration-none">Home</a></li>
+                <li class="breadcrumb-item active text-white-50" aria-current="page">Services</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<!-- Services Grid -->
+<section class="py-6">
+    <div class="container">
+        <div class="row g-4">
+            {% for service in services %}
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card card border-0 shadow-sm rounded-4 overflow-hidden h-100 hover-lift">
+                    <div class="service-card-header d-flex align-items-center justify-content-center py-5" style="background: linear-gradient(135deg, #0d6efd11, #ffc10722);">
+                        <i class="bi {{ service.icon }} text-warning" style="font-size: 4rem;"></i>
+                    </div>
+                    <div class="card-body p-4">
+                        <h4 class="fw-bold mb-2">{{ service.name }}</h4>
+                        <p class="text-muted mb-3">{{ service.description }}</p>
+                        <ul class="list-unstyled mb-4">
+                            {% for feature in service.features %}
+                            <li class="mb-1 text-muted small">
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>{{ feature }}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-primary">{{ service.price }}</span>
+                            <a href="{% url 'contact' %}" class="btn btn-sm btn-warning rounded-pill px-4 fw-semibold">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Pricing CTA -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-3">Not Sure Which Plan Is Right for You?</h2>
+        <p class="text-muted mb-4 col-md-6 mx-auto">Our team is happy to recommend the best service for your home or business. Get a free, no-obligation quote today.</p>
+        <a href="{% url 'contact' %}" class="btn btn-primary btn-lg rounded-pill px-5 fw-semibold">Get a Free Quote</a>
+    </div>
+</section>
+
+<!-- Add-ons Section -->
+<section class="py-6">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-label text-warning fw-semibold">Extras</span>
+            <h2 class="display-6 fw-bold mt-1">Service <span class="text-primary">Add-Ons</span></h2>
+            <p class="text-muted col-lg-5 mx-auto">Customize your cleaning with our optional add-on services.</p>
+        </div>
+        <div class="row row-cols-2 row-cols-md-4 g-3 justify-content-center">
+            {% for addon in addons %}
+            <div class="col">
+                <div class="addon-card text-center p-3 rounded-3 border border-warning-subtle h-100">
+                    <i class="bi {{ addon.icon }} text-warning fs-3 mb-2 d-block"></i>
+                    <p class="fw-semibold small mb-0">{{ addon.name }}</p>
+                    <small class="text-muted">{{ addon.price }}</small>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

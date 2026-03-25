@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact Us – Freshious Cleaning{% endblock %}
+
+{% block content %}
+
+<!-- Page Header -->
+<div class="page-header text-white text-center py-5">
+    <div class="container py-3">
+        <h1 class="display-4 fw-bold mb-2">Get In <span class="text-warning">Touch</span></h1>
+        <p class="text-white-50 lead">We'd love to hear from you. Book a clean or ask us anything!</p>
+        <nav aria-label="breadcrumb" class="d-flex justify-content-center">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'home' %}" class="text-warning text-decoration-none">Home</a></li>
+                <li class="breadcrumb-item active text-white-50" aria-current="page">Contact</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<section class="py-6">
+    <div class="container">
+
+        {% if success %}
+        <div class="alert alert-success alert-dismissible fade show rounded-3 mb-5" role="alert">
+            <i class="bi bi-check-circle-fill me-2"></i>
+            <strong>Thank you!</strong> Your message has been received. We'll be in touch within 24 hours.
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        {% endif %}
+
+        <div class="row g-5">
+
+            <!-- Contact Form -->
+            <div class="col-lg-7">
+                <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5">
+                    <h3 class="fw-bold mb-1">Send Us a Message</h3>
+                    <p class="text-muted mb-4">Fill in the form and we'll get back to you fast!</p>
+
+                    <form method="POST" action="{% url 'contact' %}" novalidate>
+                        {% csrf_token %}
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">First Name *</label>
+                                <input type="text" name="first_name" class="form-control rounded-3" placeholder="Maria" required />
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Last Name *</label>
+                                <input type="text" name="last_name" class="form-control rounded-3" placeholder="Johnson" required />
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Email Address *</label>
+                                <input type="email" name="email" class="form-control rounded-3" placeholder="you@example.com" required />
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Phone Number</label>
+                                <input type="tel" name="phone" class="form-control rounded-3" placeholder="+1 (555) 000-0000" />
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label fw-semibold">Service Interested In</label>
+                                <select name="service" class="form-select rounded-3">
+                                    <option value="">-- Select a Service --</option>
+                                    <option>Residential Cleaning</option>
+                                    <option>Commercial Cleaning</option>
+                                    <option>Deep Cleaning</option>
+                                    <option>Move-In / Move-Out Cleaning</option>
+                                    <option>Post-Construction Cleaning</option>
+                                    <option>Window Cleaning</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Preferred Date</label>
+                                <input type="date" name="preferred_date" class="form-control rounded-3" />
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Preferred Time</label>
+                                <select name="preferred_time" class="form-select rounded-3">
+                                    <option value="">-- Any Time --</option>
+                                    <option>8:00 AM – 10:00 AM</option>
+                                    <option>10:00 AM – 12:00 PM</option>
+                                    <option>12:00 PM – 2:00 PM</option>
+                                    <option>2:00 PM – 4:00 PM</option>
+                                    <option>4:00 PM – 6:00 PM</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label fw-semibold">Message</label>
+                                <textarea name="message" class="form-control rounded-3" rows="4" placeholder="Tell us about your space, special requirements, or any questions…"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-warning btn-lg w-100 rounded-pill fw-semibold shadow">
+                                    <i class="bi bi-send me-2"></i>Send Message
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-lg-5">
+                <h3 class="fw-bold mb-4">Contact Information</h3>
+
+                <div class="d-flex gap-3 mb-4">
+                    <div class="contact-icon-badge bg-warning d-flex align-items-center justify-content-center rounded-circle flex-shrink-0">
+                        <i class="bi bi-telephone-fill text-dark"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold mb-0">Phone</h6>
+                        <a href="tel:+15551234567" class="text-decoration-none text-muted">+1 (555) 123-4567</a>
+                    </div>
+                </div>
+
+                <div class="d-flex gap-3 mb-4">
+                    <div class="contact-icon-badge bg-warning d-flex align-items-center justify-content-center rounded-circle flex-shrink-0">
+                        <i class="bi bi-envelope-fill text-dark"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold mb-0">Email</h6>
+                        <a href="mailto:hello@freshiouscleaning.com" class="text-decoration-none text-muted">hello@freshiouscleaning.com</a>
+                    </div>
+                </div>
+
+                <div class="d-flex gap-3 mb-4">
+                    <div class="contact-icon-badge bg-warning d-flex align-items-center justify-content-center rounded-circle flex-shrink-0">
+                        <i class="bi bi-geo-alt-fill text-dark"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold mb-0">Office</h6>
+                        <p class="text-muted mb-0">123 Clean Street, Sparkle City, TX 75001</p>
+                    </div>
+                </div>
+
+                <div class="d-flex gap-3 mb-5">
+                    <div class="contact-icon-badge bg-warning d-flex align-items-center justify-content-center rounded-circle flex-shrink-0">
+                        <i class="bi bi-clock-fill text-dark"></i>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold mb-0">Business Hours</h6>
+                        <p class="text-muted mb-0">Monday – Saturday: 8 AM – 6 PM<br>Sunday: Closed</p>
+                    </div>
+                </div>
+
+                <!-- Map Placeholder -->
+                <div class="rounded-4 overflow-hidden shadow-sm border" style="height: 240px; background: #f0f0f0;">
+                    <div class="d-flex align-items-center justify-content-center h-100 text-muted flex-column gap-2">
+                        <i class="bi bi-map fs-1 text-warning"></i>
+                        <small>Interactive map coming soon</small>
+                    </div>
+                </div>
+
+                <!-- Social Links -->
+                <div class="mt-4">
+                    <h6 class="fw-bold mb-3">Follow Us</h6>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="btn btn-outline-secondary rounded-circle p-2" style="width:42px;height:42px;">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-secondary rounded-circle p-2" style="width:42px;height:42px;">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-secondary rounded-circle p-2" style="width:42px;height:42px;">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

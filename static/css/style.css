@@ -1,0 +1,256 @@
+/* ============================================================
+   FRESHIOUS CLEANING — Custom Stylesheet
+   ============================================================ */
+
+/* ----- Base & Typography ----- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #222;
+    background: #fff;
+}
+
+/* Utility spacing */
+.py-6 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+/* Section Labels */
+.section-label {
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-size: .85rem;
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+#mainNav {
+    background: linear-gradient(90deg, #0a4f8f 0%, #0d6efd 100%);
+    transition: background .3s, padding .3s;
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+}
+
+#mainNav .navbar-brand {
+    font-size: 1.3rem;
+    letter-spacing: -.01em;
+}
+
+#mainNav .nav-link {
+    font-size: .925rem;
+    font-weight: 500;
+    padding: .5rem .75rem;
+    border-radius: .5rem;
+    transition: background .2s, color .2s;
+}
+
+#mainNav .nav-link:hover,
+#mainNav .nav-link.active {
+    background: rgba(255, 255, 255, .12);
+    color: #ffc107 !important;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero-section {
+    min-height: 90vh;
+    background:
+        linear-gradient(135deg, rgba(10, 79, 143, .88) 0%, rgba(13, 110, 253, .75) 100%),
+        url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&q=80') center/cover no-repeat;
+    padding: 6rem 0 5rem;
+}
+
+/* Stats bar inside hero */
+.stat-card {
+    background: rgba(255, 255, 255, .12);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, .2);
+}
+
+/* ============================================================
+   SERVICE CARDS
+   ============================================================ */
+.service-card {
+    transition: transform .25s, box-shadow .25s;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(13, 110, 253, .15) !important;
+}
+
+.service-icon {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, #fff7e0, #fff3cd);
+    border: 2px solid #ffc10744;
+}
+
+/* ============================================================
+   WHY CHOOSE US
+   ============================================================ */
+.why-item {
+    background: #f8f9ff;
+    transition: background .2s, box-shadow .2s;
+}
+
+.why-item:hover {
+    background: #eef2ff;
+    box-shadow: 0 4px 16px rgba(13, 110, 253, .08);
+}
+
+.icon-badge {
+    width: 48px;
+    height: 48px;
+}
+
+/* ============================================================
+   HOW IT WORKS — STEPS
+   ============================================================ */
+.step-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .15);
+    border: 2px solid #ffc107;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffc107;
+}
+
+/* ============================================================
+   TEAM CARDS
+   ============================================================ */
+.team-card {
+    transition: transform .25s, box-shadow .25s;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .1) !important;
+}
+
+.team-avatar {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, #0d6efd, #0a4f8f);
+    font-size: 1.2rem;
+}
+
+/* ============================================================
+   AVATAR (Testimonials)
+   ============================================================ */
+.avatar-circle {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0d6efd, #0a4f8f);
+    font-size: .9rem;
+    flex-shrink: 0;
+}
+
+/* ============================================================
+   HOVER LIFT (Generic)
+   ============================================================ */
+.hover-lift {
+    transition: transform .25s, box-shadow .25s;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, .1) !important;
+}
+
+/* ============================================================
+   PAGE HEADER (inner pages)
+   ============================================================ */
+.page-header {
+    background:
+        linear-gradient(135deg, rgba(10, 79, 143, .9) 0%, rgba(13, 110, 253, .8) 100%),
+        url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1400&q=80') center/cover no-repeat;
+}
+
+/* ============================================================
+   CONTACT PAGE
+   ============================================================ */
+.contact-icon-badge {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+}
+
+/* ============================================================
+   ADD-ON CARDS
+   ============================================================ */
+.addon-card {
+    transition: transform .2s, box-shadow .2s;
+    background: #fff;
+}
+
+.addon-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(255, 193, 7, .25);
+}
+
+/* ============================================================
+   CTA SECTION
+   ============================================================ */
+.cta-section {
+    background: linear-gradient(135deg, #0a4f8f 0%, #0d6efd 100%);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer-bg {
+    background: #0a1628;
+}
+
+.footer-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color .2s;
+}
+
+.footer-link:hover {
+    color: #ffc107;
+}
+
+.hover-gold {
+    transition: color .2s;
+}
+
+.hover-gold:hover {
+    color: #ffc107 !important;
+}
+
+/* ============================================================
+   SCROLLBAR (subtle)
+   ============================================================ */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0d6efd66;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0d6efd;
+}
