@@ -34,18 +34,18 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
                     <li class="nav-item">
-                        <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link nav-btn {% if request.resolver_match.url_name == 'home' %}active{% endif %}" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.resolver_match.url_name == 'services' %}active{% endif %}" href="{% url 'services' %}">Services</a>
+                        <a class="nav-link nav-btn {% if request.resolver_match.url_name == 'services' %}active{% endif %}" href="{% url 'services' %}">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}" href="{% url 'about' %}">About</a>
+                        <a class="nav-link nav-btn {% if request.resolver_match.url_name == 'about' %}active{% endif %}" href="{% url 'about' %}">About</a>
                     </li>
-                    <li class="nav-item ms-lg-2">
-                        <a class="btn btn-warning fw-semibold px-4 rounded-pill {% if request.resolver_match.url_name == 'contact' %}active{% endif %}" href="{% url 'contact' %}">
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-warning fw-bold px-5 py-2 rounded-pill fs-6 nav-cta {% if request.resolver_match.url_name == 'contact' %}active{% endif %}" href="{% url 'contact' %}">
                             Get a Quote
                         </a>
                     </li>

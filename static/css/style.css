@@ -34,38 +34,58 @@ body {
 #mainNav {
     background: linear-gradient(90deg, #0a4f8f 0%, #0d6efd 100%);
     transition: background .3s, padding .3s;
-    padding-top: .75rem;
-    padding-bottom: .75rem;
+    padding-top: 1.1rem;
+    padding-bottom: 1.1rem;
 }
 
 #mainNav .navbar-brand {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     letter-spacing: -.01em;
 }
 
 #mainNav .nav-link {
-    font-size: .925rem;
-    font-weight: 500;
-    padding: .5rem .75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: .6rem 1.4rem;
     border-radius: .5rem;
-    transition: background .2s, color .2s;
+    transition: background .2s, color .2s, border-color .2s;
 }
 
-#mainNav .nav-link:hover,
-#mainNav .nav-link.active {
+/* Outlined style for regular nav links */
+#mainNav .nav-link.nav-btn {
+    border: 2.5px solid rgba(255, 255, 255, .35);
+}
+
+#mainNav .nav-link.nav-btn:hover,
+#mainNav .nav-link.nav-btn.active {
     background: rgba(255, 255, 255, .12);
+    border-color: #ffc107;
     color: #ffc107 !important;
+}
+
+/* Get a Quote CTA */
+#mainNav .nav-cta {
+    border: 3px solid #e6a800 !important;
+    font-size: 1rem;
+    letter-spacing: .01em;
+    box-shadow: 0 3px 12px rgba(255, 193, 7, .35);
+    transition: transform .15s, box-shadow .15s;
+}
+
+#mainNav .nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 193, 7, .45);
 }
 
 /* ============================================================
    HERO
    ============================================================ */
 .hero-section {
-    min-height: 90vh;
+    min-height: 60vh;
     background:
         linear-gradient(135deg, rgba(10, 79, 143, .88) 0%, rgba(13, 110, 253, .75) 100%),
         url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&q=80') center/cover no-repeat;
-    padding: 6rem 0 5rem;
+    padding: 3.5rem 0 3rem;
 }
 
 .hero-section h1 {
@@ -79,6 +99,33 @@ body {
     background: rgba(255, 255, 255, .12);
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, .2);
+}
+
+/* ============================================================
+   BUTTONS — Bold borders everywhere
+   ============================================================ */
+.btn {
+    border-width: 2.5px !important;
+}
+
+.btn-warning {
+    border-color: #e6a800 !important;
+}
+
+.btn-outline-light {
+    border-color: rgba(255, 255, 255, .85) !important;
+}
+
+.btn-outline-warning {
+    border-color: #ffc107 !important;
+}
+
+.btn-primary {
+    border-color: #0a58ca !important;
+}
+
+.btn-outline-secondary {
+    border-color: #6c757d !important;
 }
 
 /* ============================================================
